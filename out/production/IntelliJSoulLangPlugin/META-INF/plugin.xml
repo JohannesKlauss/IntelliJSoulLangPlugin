@@ -1,0 +1,41 @@
+<idea-plugin>
+    <id>com.klauss.soullang</id>
+    <name>SOUL Language</name>
+    <version>1.0</version>
+    <vendor email="klauss.johannes@gmail.com" url="https://github.com/JohannesKlauss/IntelliJSoulLangPlugin">Johannes
+        Klauss
+    </vendor>
+
+    <description><![CDATA[
+      This plugin adds syntax highlighting for SOUL files.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      <ol>
+        <li>0.1 - initial release. This is still very much in alpha state.</li>
+      </ol>
+    ]]>
+    </change-notes>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="SOUL File" implementationClass="org.intellij.sdk.language.SoulFileType"
+                  fieldName="INSTANCE" language="SOUL" extensions="soul"/>
+        <lang.parserDefinition language="SOUL"
+                               implementationClass="org.intellij.sdk.language.SoulParserDefinition"/>
+        <lang.syntaxHighlighterFactory language="SOUL"
+                                       implementationClass="org.intellij.sdk.language.SoulSyntaxHighlighterFactory"/>
+        <colorSettingsPage implementation="org.intellij.sdk.language.SoulColorSettingsPage"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+</idea-plugin>
